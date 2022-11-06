@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <h1>Form Validation</h1>
+    <hr />
+    <div id="form">
+      <form action="#" method="post" novalidate>
+        <legend>
+          Your tradeable information (we care about your privacy &#128521; )
+        </legend>
+        <section data-form-validation></section>
+        <label for="#email">
+          <strong aria-label="required" aria-live="polite">*Email :</strong>
+          <input type="email" name="email" id="email" />
+          <section id="emailErrors"></section>
+        </label>
+
+        <label for="#country">
+          <strong aria-label="required" aria-live="polite">*Country :</strong>
+          <input type="text" name="country" id="country" />
+          <section id="countryErrors"></section>
+        </label>
+
+        <label for="#zipCode">
+          <strong aria-label="required" aria-live="polite">*Zip Code :</strong>
+          <input type="text" name="zipCode" id="zipCode" />
+          <section id="zipCodeErrors"></section>
+        </label>
+
+        <label for="#password">
+          <strong aria-label="required" aria-live="polite">*Password :</strong>
+          <input type="password" name="password" id="password" />
+          <section id="passwordErrors"></section>
+        </label>
+
+        <label for="#confirmPassword">
+          <strong aria-label="required" aria-live="polite"
+            >*Confirm Password :</strong
+          >
+          <input type="password" name="confirmPassword" id="confirmPassword" />
+          <section id="confirmPasswordErrors"></section>
+        </label>
+        <button type="button">Send Form</button>
+      </form>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
