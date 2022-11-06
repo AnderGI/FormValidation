@@ -1,0 +1,52 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 2em 4em;
+}
+form {
+  display: grid;
+  grid-auto-flow: row;
+  padding: 2em 4em;
+  row-gap: 1em;
+
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  letter-spacing: 0.125em;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+section {
+  padding: 1em 0.5em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.125;
+  text-transform: lowercase;
+}
+label.valid {
+  border: 2px solid lightgreen;
+}
+label.invalid {
+  border: 2px solid red;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1rem;
+  font-family: inherit;
+  letter-spacing: inherit;
+  padding: 1em;
+  transition: background-color 500ms ease;
+}
+
+button:focus,
+button:hover {
+  background-color: burlywood;
+}

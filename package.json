@@ -1,0 +1,38 @@
+{
+  "name": "formvalidation",
+  "version": "1.0.0",
+  "description": "This projects' aim is to apply Form Validation methodologies, using in this case regular expressions, and make a suitable user interface so that  he/she knows what kind of data should be introduced.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "prepare": "husky install",
+    "scriptname": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnderGI/FormValidation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnderGI/FormValidation/issues"
+  },
+  "homepage": "https://github.com/AnderGI/FormValidation#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
