@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --background: #181818;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.root {
+  height: 75%;
+  width: 100%;
+  margin: auto;
+
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+form {
+  position: relative;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  color: #fff;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+}
+
+form span.highlighted {
+  color: gold;
+  font-weight: 900;
+  font-variant: small-caps;
+}
+
+form section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+form section button {
+  background-color: red;
+  border: none;
+  max-width: fit-content;
+  border-radius: 10px;
+  padding: 1em;
+  font-size: 1.25rem;
+  color: red;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+form section button:hover {
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+
+form h2 {
+  font-size: 2rem;
+  font-variant: small-caps;
+  margin-bottom: -0.5em;
+}

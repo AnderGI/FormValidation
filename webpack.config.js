@@ -9,14 +9,19 @@ const rulesForCSS = {
 const rulesForJSS = {
   test: /\.js$/i,
   use: {
-    loader: "babel-laoder",
+    loader: "babel-loader",
     options: {
       presets: ["@babel/preset-env"],
     },
   },
 };
 
-const rules = [rulesForCSS, rulesForJSS];
+const rulesForImages = {
+  test: /\.(png|svg|jpg|jpeg|gif)$/i,
+  type: "asset/resource",
+};
+
+const rules = [rulesForCSS, rulesForJSS, rulesForImages];
 
 module.exports = (env, argv) => {
   const { mode } = argv;
@@ -31,5 +36,8 @@ module.exports = (env, argv) => {
       rules: rules,
     },
     plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+    devServer: {
+      open: true,
+    },
   };
 };
