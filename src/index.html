@@ -9,7 +9,7 @@
   <body>
     <div class="root">
       <form action="#" method="post">
-        <section>
+        <section class="visible">
           <div>
             <h2>Ready to get ripped?</h2>
             <p>
@@ -17,22 +17,27 @@
               <span class="highlighted">NEW RP Hypertrophy App</span>
             </p>
           </div>
-          <button type="button">Start Now</button>
+          <div>
+            <button type="button" class="nextSection">Start Now</button>
+            <p>Or press <kbd>Enter</kbd></p>
+          </div>
+        </section>
+        <section>
+          <div>
+            <label for="#firstName">Whats <strong>your name?</strong>*</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div>
+            <button type="button" class="nextSection">Next</button>
+            <p>Or press <kbd>Enter</kbd></p>
+          </div>
         </section>
         <!--
-        <section>
-          <label for="#firstName">Whats <strong>your name?</strong>*</label>
-          <input type="text" name="name" id="name" />
-          <span>
-            <button type="button">Next</button>
-            <p>Or press <kbd>Enter</kbd></p>
-          </span>
-        </section>
         <section>
           <label for="#lastName">Whats <strong>last name?</strong>*</label>
           <input type="text" name="lastName" id="lastName" />
           <span>
-            <button type="button">Next</button>
+            <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
           </span>
         </section>
@@ -40,7 +45,7 @@
           <label for="#email">Whats <strong>your email</strong>, name? *</label>
           <input type="email" name="email" id="email" />
           <span>
-            <button type="button">Next</button>
+            <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
           </span>
         </section>
@@ -50,7 +55,7 @@
           >
           <input type="password" name="password" id="password" />
           <span>
-            <button type="button">Next</button>
+            <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
           </span>
         </section>
@@ -60,17 +65,18 @@
           >
           <input type="password" name="confirmPassword" id="confirmPassword" />
           <span>
-            <button type="button">Next</button>
+            <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
           </span>
         </section>
         <section>
+          <div>
             <h2>Ready to <q>light wight baby</q> mode?</h2>
             <p>Now its time for us to help you</p>
           </div>
-          <button type="submit">Register</button>            
+          <button type="submit">Register</button>
         </section>
-              -->
+        -->
       </form>
     </div>
   </body>

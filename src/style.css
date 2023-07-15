@@ -44,6 +44,10 @@ form {
   color: #fff;
   font-size: 1.25rem;
   letter-spacing: 0.1em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 form span.highlighted {
@@ -53,28 +57,43 @@ form span.highlighted {
 }
 
 form section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 2em;
+  position: absolute;
+  /*display: none;*/
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  top: 0%;
+  transition: top ease 600ms, opacity ease 400ms, height ease 400ms,
+    visibility ease 400ms;
 }
 
-form section button {
-  background-color: red;
+form section.visible {
+  /*display: block;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+form section.visible button.nextSection {
+  background-color: transparent;
   border: none;
   max-width: fit-content;
   border-radius: 10px;
   padding: 1em;
   font-size: 1.25rem;
-  color: red;
-  background-color: rgba(255, 255, 255, 0.8);
+  color: white;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 0.1em;
 }
 
-form section button:hover {
-  color: white;
+form section.visible button.nextSection:hover {
   background-color: red;
   cursor: pointer;
 }
@@ -83,4 +102,18 @@ form h2 {
   font-size: 2rem;
   font-variant: small-caps;
   margin-bottom: -0.5em;
+}
+
+form > section > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+
+form > section > div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1em;
 }
