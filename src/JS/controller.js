@@ -24,6 +24,7 @@ export function delegateEvents() {
       //else take the input from the visible section and validate it
       const visibleInput = $("section.visible input");
       formValidation(visibleInput);
+      visibleInput.value = "";
     }
   });
 
