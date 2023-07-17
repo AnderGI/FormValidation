@@ -8,7 +8,7 @@ export function formValidation(target) {
   if (error === "OK") {
     slideForm();
   } else {
-    showError(error);
+    showError(error, target);
   }
 }
 
@@ -46,7 +46,7 @@ function handleError(target) {
   return "The value you entered for the field is not valid";
 }
 
-function showError(error) {
+function showError(error, field) {
   const divError = $("section.visible div.error");
 
   //show if the div is hidden
@@ -54,4 +54,11 @@ function showError(error) {
     divError.classList.remove("hidden");
 
   divError.textContent = error;
+
+  const id = field.getAttribute("id") ?? field.getAttribute("type");
+
+  divError.setAttribute("id", "error-for-" + id);
+
+  //add aria-describedby to field to associate that field with the erro
+  field.setAttribute("aria-describedby", "error-for-" + id);
 }
