@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=development",
-    "dev": "webpack serve  --mode=development"
+    "build": "webpack --mode=production",
+    "dev": "webpack serve  --mode=development",
+    "ghPush" : "git subtree push --prefix build origin gh-pages"
   },
   "repository": {
     "type": "git",
