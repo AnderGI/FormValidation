@@ -23,6 +23,13 @@ function handleError(target) {
   //if its valid slide to the next section of the form
   if (validity.valid) return "OK";
 
+  //Validate pattern
+  if (validity.patternMismatch) {
+    if (target.hasAttribute("title")) return target.getAttribute("title");
+
+    return "Please match the request format";
+  }
+
   //Validate minimum length
   if (validity.tooShort)
     return `Please enter a value that is longer than ${target.getAttribute(
@@ -38,13 +45,6 @@ function handleError(target) {
   //Type validity for email
   if (validity.typeMismatch) {
     if (target.type === "email") return "Please enter a correct email format";
-  }
-
-  //Validate pattern
-  if (validity.patternMismatch) {
-    if (target.getAttribute("title")) return target.getAttribute("title");
-
-    return "Please match the request format";
   }
 
   return "The value you entered for the field is not valid";

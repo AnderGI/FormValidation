@@ -1,5 +1,5 @@
 import zxcvbn from "zxcvbn";
-import { $ } from "./UTILITIES/selectors";
+import { $ } from "../UTILITIES/selectors";
 
 const strength = {
   0: "Really Weak",

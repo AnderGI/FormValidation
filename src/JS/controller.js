@@ -3,7 +3,7 @@
 import { $ } from "./UTILITIES/selectors";
 import { formValidation } from "./formValudation";
 import { slideForm } from "./slider";
-import { passwordMeter } from "./passwordMeter";
+import { passwordMeter } from "./PASSWORD INPUT/passwordMeter";
 //it will be the one in which all events will be delegated
 export function delegateEvents() {
   //click and keydown events for form buttons to slide into the next form section
@@ -12,7 +12,6 @@ export function delegateEvents() {
   //CLICK EVENT
   //Order first click, then evaluate validity; if valid slide into the next section
   document.addEventListener("click", function (event) {
-    //prevent button submit
     event.preventDefault();
     const target = event.target;
     if (target.classList.contains("firstBtn")) {
@@ -25,6 +24,14 @@ export function delegateEvents() {
       //else take the input from the visible section and validate it
       const visibleInput = $("section.visible input");
       formValidation(visibleInput);
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.code === "Enter") {
+      const visibleInput = $("section.visible input");
+      if (!visibleInput) slideForm();
+      else formValidation(visibleInput);
     }
   });
 
