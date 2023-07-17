@@ -4,11 +4,15 @@ import { slideForm } from "./slider";
 //Using the constraint validation api
 export function formValidation(target) {
   const error = handleError(target);
+  const divError = $("section.visible div.error");
 
   if (error === "OK") {
+    //before sliding into the next section remove the aria attribute from the input remove it from the dv.error
+    //and add hidden class to div.error (display none)
+    removeError(target, divError);
     slideForm();
   } else {
-    showError(error, target);
+    showError(error, target, divError);
   }
 }
 
@@ -46,19 +50,23 @@ function handleError(target) {
   return "The value you entered for the field is not valid";
 }
 
-function showError(error, field) {
-  const divError = $("section.visible div.error");
-
+function showError(error, field, errorField) {
   //show if the div is hidden
-  if (divError.classList.contains("hidden"))
-    divError.classList.remove("hidden");
+  if (errorField.classList.contains("hidden"))
+    errorField.classList.remove("hidden");
 
-  divError.textContent = error;
+  errorField.textContent = error;
 
   const id = field.getAttribute("id") ?? field.getAttribute("type");
 
-  divError.setAttribute("id", "error-for-" + id);
+  errorField.setAttribute("id", "error-for-" + id);
 
   //add aria-describedby to field to associate that field with the erro
   field.setAttribute("aria-describedby", "error-for-" + id);
+}
+
+function removeError(field, errorField) {
+  field.removeAttribute("aria-describedby");
+  errorField.removeAttribute("id");
+  errorField.classList.add("hidden");
 }

@@ -141,12 +141,12 @@ form > section input:valid {
 
 /*ERROR MESSAGE*/
 form section div.error {
-  display: none;
+  display: block;
   font-style: italic;
   color: gold;
   font-size: 1rem;
 }
 
-form section div.error {
-  display: block;
+form section div.error.hidden {
+  display: none;
 }
