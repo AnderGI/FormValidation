@@ -40,7 +40,7 @@ form {
   left: 20%;
   top: 50%;
   transform: translateY(-50%);
-  width: 50%;
+  width: 75%;
   color: #fff;
   font-size: 1.25rem;
   letter-spacing: 0.1em;
@@ -57,6 +57,7 @@ form span.highlighted {
 }
 
 form section {
+  width: 75%;
   position: absolute;
   /*display: none;*/
   opacity: 0;
@@ -80,7 +81,7 @@ form section.visible {
   visibility: visible;
 }
 
-form section.visible button.nextSection {
+form section.visible button {
   background-color: transparent;
   border: none;
   max-width: fit-content;
@@ -93,7 +94,8 @@ form section.visible button.nextSection {
   letter-spacing: 0.1em;
 }
 
-form section.visible button.nextSection:hover {
+form section.visible button:hover,
+form section.visible button.clicked {
   background-color: red;
   cursor: pointer;
 }
@@ -116,4 +118,16 @@ form > section > div:last-child {
   flex-direction: row;
   justify-content: flex-start;
   gap: 1em;
+}
+
+form > section input {
+  width: 75%;
+  padding: 1em;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  background-color: transparent;
+  border: none;
+  outline: 1px solid white;
+  border-radius: 10px;
+  color: white;
 }
