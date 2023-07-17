@@ -4,10 +4,11 @@ import { slideForm } from "./slider";
 //Using the constraint validation api
 export function formValidation(target) {
   const error = handleError(target);
-  console.log(error);
 
-  if (error === "valid") {
+  if (error === "OK") {
     slideForm();
+  } else {
+    showError(error);
   }
 }
 
@@ -16,21 +17,41 @@ function handleError(target) {
   const validity = target.validity;
 
   //if its valid slide to the next section of the form
-  if (validity.valid) return "valid";
+  if (validity.valid) return "OK";
 
   //Validate minimum length
-  if (validity.tooShort) return "Too short";
+  if (validity.tooShort)
+    return `Please enter a value that is longer than ${target.getAttribute(
+      "minlength"
+    )} characters long`;
 
   //Validate maximum length
-  if (validity.tooLong) return "Too long";
+  if (validity.tooLong)
+    return `Please enter a value that is shorter than ${target.getAttribute(
+      "maxlength"
+    )} characters long`;
 
   //Type validity for email
   if (validity.typeMismatch) {
-    if (target.type === "email") return "Email type mismatch";
+    if (target.type === "email") return "Please enter a correct email format";
   }
 
   //Validate pattern
-  if (validity.patternMismatch) return "Pattern Mismatch";
+  if (validity.patternMismatch) {
+    if (target.getAttribute("title")) return target.getAttribute("title");
 
-  return "Not Valid";
+    return "Please match the request format";
+  }
+
+  return "The value you entered for the field is not valid";
+}
+
+function showError(error) {
+  const divError = $("section.visible div.error");
+
+  //show if the div is hidden
+  if (divError.classList.contains("hidden"))
+    divError.classList.remove("hidden");
+
+  divError.textContent = error;
 }

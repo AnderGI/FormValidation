@@ -12,6 +12,8 @@ export function delegateEvents() {
   //CLICK EVENT
   //Order first click, then evaluate validity; if valid slide into the next section
   document.addEventListener("click", function (event) {
+    //prevent button submit
+    event.preventDefault();
     const target = event.target;
     if (target.classList.contains("firstBtn")) {
       //first btn should not valudate anything

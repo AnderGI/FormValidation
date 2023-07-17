@@ -29,6 +29,7 @@
             <label for="#firstName">Whats <strong>your name?</strong>*</label>
             <input type="text" name="name" id="name" minlength="3" required />
           </div>
+          <div class="error hidden"></div>
           <div>
             <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
@@ -45,6 +46,7 @@
               required
             />
           </div>
+          <div class="error hidden"></div>
           <div>
             <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
@@ -63,6 +65,7 @@
               required
             />
           </div>
+          <div class="error hidden"></div>
           <div>
             <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
@@ -79,10 +82,11 @@
               id="password"
               minlength="8"
               maxlength="20"
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{8,20}$"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
               required
             />
           </div>
+          <div class="error hidden"></div>
           <div>
             <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
@@ -99,10 +103,11 @@
               id="confirmPassword"
               minlength="8"
               maxlength="20"
-              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>]).{8,20}$"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
               required
             />
           </div>
+          <div class="error hidden"></div>
           <div>
             <button type="button" class="nextSection">Next</button>
             <p>Or press <kbd>Enter</kbd></p>
