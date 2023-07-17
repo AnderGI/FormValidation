@@ -3,7 +3,7 @@
 import { $ } from "./UTILITIES/selectors";
 import { formValidation } from "./formValudation";
 import { slideForm } from "./slider";
-
+import { passwordMeter } from "./passwordMeter";
 //it will be the one in which all events will be delegated
 export function delegateEvents() {
   //click and keydown events for form buttons to slide into the next form section
@@ -25,6 +25,13 @@ export function delegateEvents() {
       //else take the input from the visible section and validate it
       const visibleInput = $("section.visible input");
       formValidation(visibleInput);
+    }
+  });
+
+  document.addEventListener("input", function (event) {
+    const visibleInput = $("section.visible input");
+    if (visibleInput.type === "password") {
+      passwordMeter(visibleInput.value);
     }
   });
 }

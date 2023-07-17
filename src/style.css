@@ -139,6 +139,12 @@ form > section input:valid {
   outline: 1px solid lightgreen;
 }
 
+form > section div.passwordContainerMeter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+}
 /*ERROR MESSAGE*/
 form section div.error {
   display: block;
